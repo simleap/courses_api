@@ -6,7 +6,8 @@ ruby "3.2.1"
 gem "rails", "~> 7.1.2"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# gem "sqlite3", "~> 1.4"
+gem 'pg'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -50,6 +51,7 @@ end
 
 group :test do
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'database_cleaner'
 end
 
 gem "devise", "~> 4.9"

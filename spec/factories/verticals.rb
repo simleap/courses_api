@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :vertical do
-    name { Faker::Educator.subject }
+    name { Faker::Job.field }
   end
 end
 

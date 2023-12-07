@@ -18,7 +18,7 @@ RSpec.describe "Categories", type: :request do
         expect(response).to have_http_status(:success)
       end
 
-      it { is_expected.to include({ "id" => category.id, "name" => category.name, "state" => category.state }) }
+      it { is_expected.to include({ "id" => category.id, "name" => category.name, "state" => category.state, "vertical_id" => category.vertical_id }) }
     end
 
     context "when invalid token" do
@@ -94,12 +94,12 @@ RSpec.describe "Categories", type: :request do
     let!(:category) { create(:category) }
     let!(:course) { create(:course, category: category) }
 
-    let(:new_category_name) { Faker::Educator.subject }
-    let(:new_course_name) { Faker::Educator.subject }
+    let(:new_category_name) { 'IT' }
+    let(:new_course_name) { 'Ruby' }
     let(:update_params) {
       {
         name: new_category_name,
-        courses_attributes: [{ id: category.id, name: new_course_name}]
+        courses_attributes: [{ id: course.id, name: new_course_name}]
       }
     }
 
@@ -109,7 +109,7 @@ RSpec.describe "Categories", type: :request do
         expect(response).to have_http_status(:success)
       end
 
-      it "should update category and category" do
+      it "should update category and course" do
         expect {
           put "/categories/#{category.id}", params: { category: update_params, access_token: token }
         }.to change{ category.reload.name }.to(new_category_name)

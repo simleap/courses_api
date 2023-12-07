@@ -18,7 +18,7 @@ RSpec.describe "Courses", type: :request do
         expect(response).to have_http_status(:success)
       end
 
-      it { is_expected.to include({ "id" => course.id, "name" => course.name, "state" => course.state }) }
+      it { is_expected.to include({ "id" => course.id, "name" => course.name, "state" => course.state, "category_id" => course.category_id }) }
     end
 
     context "when invalid token" do

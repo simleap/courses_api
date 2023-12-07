@@ -93,8 +93,8 @@ RSpec.describe "Verticals", type: :request do
     let!(:vertical) { create(:vertical) }
     let!(:category) { create(:category, vertical: vertical) }
 
-    let(:new_vertical_name) { Faker::Educator.subject }
-    let(:new_category_name) { Faker::Educator.subject }
+    let(:new_vertical_name) { 'vertica' }
+    let(:new_category_name) { 'catego' }
     let(:update_params) {
       {
         name: new_vertical_name,
