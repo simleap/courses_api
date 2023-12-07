@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_07_044805) do
     t.integer "vertical_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_categories_on_name", unique: true
     t.index ["vertical_id"], name: "index_categories_on_vertical_id"
   end
 
@@ -88,6 +89,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_07_044805) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_verticals_on_name", unique: true
   end
 
   add_foreign_key "categories", "verticals"
