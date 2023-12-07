@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+user = FactoryBot.create(:user, email: "dev@courses_api.com", password: "password")
+FactoryBot.create(:access_token, resource_owner_id: user.id)
+FactoryBot.create(:vertical, :with_category_course)
+
+
