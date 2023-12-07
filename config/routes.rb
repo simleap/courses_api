@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   resources :verticals, only: %i"index show create update destroy"
   resources :categories, only: %i"index show create update destroy"
+  resources :courses, only: %i"index show create update destroy"
 end

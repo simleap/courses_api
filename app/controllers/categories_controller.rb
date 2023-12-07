@@ -2,11 +2,11 @@ class CategoriesController < ApplicationController
   before_action :doorkeeper_authorize!
 
   def index
-    render json: Category.all.as_json(only: [:id, :name, :state])
+    render json: Category.all.as_json(only: [:id, :name, :state, :vertical_id])
   end
 
   def show
-    render json: category.as_json(only: [:id, :name, :state])
+    render json: category.as_json(only: [:id, :name, :state, :vertical_id])
   end
 
   def create
