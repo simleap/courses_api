@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category do
-    name { Faker::Educator.unique.subject }
+    name { Faker::Educator.subject }
   end
 end
 
